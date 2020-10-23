@@ -1,0 +1,18 @@
+<h3>Things I Love!</h3>
+<% if (things.length) { %>
+<ul class="list-group">
+  <% things.forEach(thing => { %>
+  <li class="list-group-item">
+    <%= thing.title %>
+    <a
+      class="badge btn btn-danger rounded-circle float-right"
+      style="font-size: 15px"
+      href="/delete/<%= thing._id %>"
+      >&times;</a>
+    >
+  </li>
+  <% }); %>
+</ul>
+<% } else { %>
+<a href="/add">Add things You Love</a>
+<% }; %>
